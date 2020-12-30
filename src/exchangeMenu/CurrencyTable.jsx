@@ -1,6 +1,9 @@
 import React from 'react'
 
-const CurrencyTable = props => (
+const CurrencyTable = props => {
+  const currencies = Object.values(props.Currencies); 
+  
+  return (
   <table>
     <thead>
       <tr>
@@ -11,8 +14,8 @@ const CurrencyTable = props => (
       </tr>
     </thead>
     <tbody>
-      {props.Currencies.length > 0 ? (
-        props.Currencies.map(currency => (
+      {currencies.length > 0 ? (
+        currencies.map(currency => (
           <tr key={currency.id}>
             <td>{currency.name}</td>
             <td>{currency.base}</td>
@@ -35,6 +38,6 @@ const CurrencyTable = props => (
       )}
     </tbody>
   </table>
-)
+)}
 
 export default CurrencyTable
